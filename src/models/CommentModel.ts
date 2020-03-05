@@ -4,22 +4,22 @@ import Post from './PostModel';
 
 @Table
 class Comment extends Model<Comment> {
-    @Column(DataType.STRING)
-    comment!: string;
+  @Column(DataType.STRING)
+  comment!: string;
 
-    @ForeignKey(() => User)
-    @Column
-    userId: number;
+  @ForeignKey(() => User)
+  @Column
+  userId: number;
 
-    @ForeignKey(() => Post)
-    @Column
-    postId: number;
+  @ForeignKey(() => Post)
+  @Column
+  postId: number;
 
-    @BelongsTo(() => User)
-    user: User;
+  @BelongsTo(() => User)
+  user: User;
 
-    @BelongsTo(() => Post)
-    post: Post;
+  @BelongsTo(() => Post)
+  post: Post;
 }
 
 export default Comment;
